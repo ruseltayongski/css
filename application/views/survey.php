@@ -117,7 +117,7 @@ $this->load->view('include/header');
 	        $_SESSION['year']=$year;
 	        $_SESSION['month']=$month;
 	        $_SESSION['day'] = $day;
-	        $_SESSION['date']=$month.' '.$day.','.'20'.$year;
+	        $_SESSION['date']=$month.' '.$day.', '.$year;
 	        $_SESSION['timezone']=$timezone;
 	        $_SESSION['mac']=$mac;
 	        
