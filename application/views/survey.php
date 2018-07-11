@@ -42,16 +42,26 @@ $this->load->view('include/header');
 			$_SESSION['apply4']=$apply4;
 			$_SESSION['apply5']=$apply5;
 			$_SESSION['others']=$others;
-			
-			$hours=$_POST['hours'];
-			$minuite=$_POST['minuite'];
+
+            !empty($_POST['hours']) ? $hours=$_POST['hours'] : $hours=0;
+            !empty($_POST['minuite']) ? $minuite=$_POST['minuite'] : $minuite=0;
 			$_SESSION['hours']=$hours;
 			$_SESSION['minuite']=$minuite;
-			
-			$rating1=$_POST['rating1']; $rating2=$_POST['rating2']; $rating3=$_POST['rating3'];
-			$rating4=$_POST['rating4']; $rating5=$_POST['rating5']; $rating6=$_POST['rating6'];
-			$_SESSION['rating1']=$rating1; $_SESSION['rating2']=$rating2; $_SESSION['rating3']=$rating3;
-			$_SESSION['rating4']=$rating4; $_SESSION['rating5']=$rating5; $_SESSION['rating6']=$rating6;
+
+
+            !empty($_POST['rating1']) ? $rating1=$_POST['rating1'] : $rating1=0;
+            !empty($_POST['rating2']) ? $rating2=$_POST['rating2'] : $rating2=0;
+            !empty($_POST['rating3']) ? $rating3=$_POST['rating3'] : $rating3=0;
+            !empty($_POST['rating4']) ? $rating4=$_POST['rating4'] : $rating4=0;
+            !empty($_POST['rating5']) ? $rating5=$_POST['rating5'] : $rating5=0;
+            !empty($_POST['rating6']) ? $rating6=$_POST['rating6'] : $rating6=0;
+
+			$_SESSION['rating1']=$rating1;
+			$_SESSION['rating2']=$rating2;
+			$_SESSION['rating3']=$rating3;
+			$_SESSION['rating4']=$rating4;
+			$_SESSION['rating5']=$rating5;
+			$_SESSION['rating6']=$rating6;
 
 			$satisfied=$_POST['satisfied']; $suggestion=$_POST['suggestion']; $cname=$_POST['cname'];
 			$coffice=$_POST['coffice']; $ccno=$_POST['ccno']; $cemail=$_POST['cemail']; $stat=1;

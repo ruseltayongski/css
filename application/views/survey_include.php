@@ -33,44 +33,27 @@
 		</td>
 </tr>
 <tr>
-	<td style = "padding-bottom:10px;margin-left:10px;">
-
-		<div class="row">
-			<div class="col-md-12">
-				<div class="col-md-5">
-					Office Visited:<select id="field" name="section" style="border-radius:5px; width:200px;height:30px;font-size:fixed;" onchange="visit();" required>
-						<option value="" >Select Section</option>
-						<?php foreach($section as $row)
-						{
-						?>
-							<option value="<?php echo $row['section'];?>"><?php echo $row['section'];?></option>
-						<?php
-						}
-						?>
-					</select>
-					<p id="visited" style="color:red;display:inlined;"></p>
-				</div>
-
-				<div class="col-md-7">
-				
-					Staff who rendered service:<!-- <input id="rendered" name = "rendered" type = "text" style = "border-radius:5px;color:black;" onkeyup="services();" required> -->
-					<select id="rendered" style="border-radius:5px;height:30px;font-size:fixed;color:black;width:50%;" class='select2' name='rendered[]' multiple='multiple' data-placeholder='Select a name' onchange="services()">
-						<option value="">Select Staff who rendered</option>
-						<?php
-							foreach($personal_information as $row){
-								echo "<option value='".$row['userid']."'>".$row['fname'].' '.$row['lname']."</option>";
-							}
-						?>
-					</select>
-					<br>
-					<p id="service" style="color:red;display:inlined;"></p>
-
-				</div>
-
-			</div>
-		</div>
-
-	</td>
+    <td style = "text-align:center;padding-bottom:20px">
+        <div style="position:absolute;margin-left:30px;">
+            Office Visited:<select id="field" name="section" style="border-radius:5px; width:200px;height:30px;font-size:fixed;" onchange="visit();" required>
+                <option value="" >Select Section</option>
+                <?php foreach($sectionAll as $row)
+                {
+                    ?>
+                    <option value="<?php echo $row['section'];?>"><?php echo $row['section'];?></option>
+                    <?php
+                }
+                ?>
+            </select>
+        </div>
+        <div style="position:absolute;margin-left:330px;">
+            <p id="visited" style="color:red;display:inlined;"></p>
+        </div>
+        <div style="position:absolute;margin-left:410px;">
+            Staff who rendered service:<input id = "rendered" name = "rendered" type = "text" style = "border-radius:5px;color:black;" onkeyup="services();" required>
+        </div>
+        <p id="service" style="color:red;display:inlined;margin-left:730px;padding-bottom:20px;"></p>
+    </td>
 </tr>
 <tr><td></td></tr>
 
@@ -94,8 +77,10 @@
 					?>
 		 		</select>
 			Month:<select id="month" name="month" onchange="clearMonth();" style="color:black;width:100px;height:30px;font-size:15px;" required>
+                    <option value="5">June</option>
+                    <!--
 					<option value="0">January</option>
-					<!-- <option value="1">Febuary</option>
+					<option value="1">Febuary</option>
 					<option value="2">March</option>
 					<option value="3">April</option>
 					<option value="4">May</option>
@@ -263,7 +248,7 @@
 	<td style = "padding-left:10px;padding-top:20px">
 		4. As a whole, are you satisfied with the services provided/received?
 			<input id="satisfied1" type="radio" name="satisfied" value="yes" onclick="satisfieds();" required> Yes &nbsp;
-			<input id="satisfied1" type="radio" name="satisfied" value="no"  required> No <p id = "satisfied" style = "color:red; display:inline"></p>
+			<input id="satisfied1" type="radio" name="satisfied" value="no" onclick="satisfieds();" required> No <p id = "satisfied" style = "color:red; display:inline"></p>
 	</td>
 </tr>
 

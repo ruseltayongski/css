@@ -268,9 +268,9 @@
 			
 			var url = "ajax?action=addCss";
 			$("#submit").attr("disabled",true);
-			console.log('loading...');
 			$.get(url,function(data){
-				window.location="survey";
+				console.log(data);
+			    window.location="survey";
 			});
 		}
 	</script>
