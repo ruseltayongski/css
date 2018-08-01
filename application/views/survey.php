@@ -494,7 +494,7 @@ function dateChecked()
 			break;		
 		}
 	}
-	var arrayDays= [head,feb,head,tail,tail,head,tail,head,tail,head,tail,head];
+	var arrayDays= [head,feb,head,tail,tail,head,head,head,tail,head,tail,head];
 	mDay=arrayDays[cDay];
 	if(day > mDay || day <= 0){
 		document.getElementById("day").required=true;
