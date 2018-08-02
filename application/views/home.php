@@ -26,17 +26,15 @@
         <div align="center">  
           <table>
             <tr>
-               <td align="center"><a href="<?php echo base_url('css/survey');?>"><img src="<?php echo base_url('images/client.png');?>" class="img-circle img-responsive" width="70%" height="70%"></a></td>
-               <td width="120"></td>
                <td align="center"><a href="<?php echo base_url('css/LoginPage');?>"><img src="<?php echo base_url('images/user.png');?>" class="img-circle img-responsive" width="70%" height="70%"></a></td>
-               <td width="120"></td>
-               <td align="center"><a href="<?php echo base_url('css/LoginPage');?>"><img src="<?php echo base_url('images/admins.png');?>" class="img-circle img-responsive" width="70%" height="70%"></a></td>
+               <td width="150"></td>
+                <td width="150"></td>
+                <td align="center"><a href="<?php echo base_url('css/LoginPage');?>"><img src="<?php echo base_url('images/admins.png');?>" class="img-circle img-responsive" width="70%" height="70%"></a></td>
              </tr>
              <tr>
-              <td align="center"><button type="button" class="btn btn-info" onclick="location.href='css/survey'" style="color:black;width:110px;"><b>Client</b></button></td>
-               <td width="120"></td>
                 <td align="center"><button type="button" class="btn btn-info" onclick="location.href='css/LoginPage';" style="color:black;width:110px;"><b>User</b></button></td>
-               <td width="120"></td>
+                 <td width="150"></td>
+               <td width="150"></td>
                <td align="center"><button type="button" class="btn btn-info" onclick="location.href='css/LoginPage';" style="color:black;width:110px;"><b>Admin</b></button></td>
              </tr>
           </table> 
