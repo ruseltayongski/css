@@ -77,7 +77,7 @@
 					?>
 		 		</select>
 			Month:<select id="month" name="month" onchange="clearMonth();" style="color:black;width:100px;height:30px;font-size:15px;" required>
-                    <option value="7">August</option>
+                    <option value="10">November</option>
                     <!--
 					<option value="0">January</option>
 					<option value="1">Febuary</option>

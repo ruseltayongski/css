@@ -1,4 +1,4 @@
-<?php $this->load->view('include/header1'); 
+<?php $this->load->view('include/header');
 	  set_time_limit(0);
 	  ini_set('memory_limit', '-1');
 ?>
@@ -269,8 +269,15 @@
 			var url = "ajax?action=addCss";
 			$("#submit").attr("disabled",true);
 			$.get(url,function(data){
-				console.log(data);
-			    window.location="survey";
+			    console.log(data);
+				if(data == "true"){
+                    window.location="survey";
+                } else {
+				    alert("Please contact to IT Section");
+                    Lobibox.notify('warning',{
+                        msg:'Error submitting..'
+                    });
+                }
 			});
 		}
 	</script>

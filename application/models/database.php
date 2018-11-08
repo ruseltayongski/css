@@ -6,23 +6,15 @@ class Database extends CI_Model{
     }
 
 	public function cssAdd($cssstat,$section,$division,$rendered,$purpose1,$purpose2,$purpose3,$purpose4,$purpose5,$purpose6,$purpose7,$purpose8,$assistant1,$assistant2,$assistant3,$apply1,$apply2,$apply3,$apply4,$apply5,$others,$hours,$minuite,$rating1,$rating2,$rating3,$rating4,$rating5,$rating6,$satisfied,$suggestion,$cname,$coffice,$ccno,$cemail,$mac,$stat,$year,$month,$day,$timezone,$hour,$encoded_by){
-        try {
-            $db = $this->connect();
-            /*$sql="insert into css (cssstat,section,division,rendered,purpose1,purpose2,purpose3,purpose4,purpose5,purpose6,purpose7,purpose8,assistant1,assistant2,assistant3,apply1,apply2,apply3,apply4,apply5,others,hours,minuite,rating1,rating2,rating3,rating4,rating5,rating6,satisfied,suggestion,cname,coffice,ccno,cemail,macaddress,stat,year,month,day,timezone,hour,encoded_by,created_at)
-		      values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now())";*/
+        $db = $this->connect();
 
-            $sql = "insert into css (cssstat,section,division,rendered,purpose1,purpose2,purpose3,purpose4,purpose5,purpose6,purpose7,purpose8,assistant1,assistant2,assistant3,apply1,apply2,apply3,apply4,apply5,others,hours,minuite,rating1,rating2,rating3,rating4,rating5,rating6,satisfied,suggestion,cname,coffice,ccno,cemail,macaddress,stat,year,month,day,timezone,hour,encoded_by,created_at)
+        $sql = "insert into css (cssstat,section,division,rendered,purpose1,purpose2,purpose3,purpose4,purpose5,purpose6,purpose7,purpose8,assistant1,assistant2,assistant3,apply1,apply2,apply3,apply4,apply5,others,hours,minuite,rating1,rating2,rating3,rating4,rating5,rating6,satisfied,suggestion,cname,coffice,ccno,cemail,macaddress,stat,year,month,day,timezone,hour,encoded_by,created_at)
 		      values('$cssstat','$section','$division','$rendered','$purpose1','$purpose2','$purpose3','$purpose4','$purpose5','$purpose6','$purpose7','$purpose8','$assistant1','$assistant2','$assistant3','$apply1','$apply2','$apply3','$apply4','$apply5','$others','$hours','$minuite','$rating1','$rating2','$rating3','$rating4','$rating5','$rating6','$satisfied','$suggestion','$cname','$coffice','$ccno','$cemail','$mac','$stat','$year','$month','$day','$timezone','$hour','$encoded_by',now())";
 
-            $pdo = $db->prepare($sql);
-            $pdo->execute(array($cssstat, $section, $division, $rendered, $purpose1, $purpose2, $purpose3, $purpose4, $purpose5, $purpose6, $purpose7, $purpose8, $assistant1, $assistant2, $assistant3, $apply1, $apply2, $apply3, $apply4, $apply5, $others, $hours, $minuite, $rating1, $rating2, $rating3, $rating4, $rating5, $rating6, $satisfied, $suggestion, $cname, $coffice, $ccno, $cemail, $mac, $stat, $year, $month, $day, $timezone, $hour, $encoded_by));
-            $db = null;
-        }
-        catch (PDOException $e) {
-            echo "DataBase Error: The user could not be added.<br>".$e->getMessage();
-        } catch (Exception $e) {
-            echo "General Error: The user could not be added.<br>".$e->getMessage();
-        }
+        $pdo = $db->prepare($sql);
+
+        if($pdo->execute(array($cssstat, $section, $division, $rendered, $purpose1, $purpose2, $purpose3, $purpose4, $purpose5, $purpose6, $purpose7, $purpose8, $assistant1, $assistant2, $assistant3, $apply1, $apply2, $apply3, $apply4, $apply5, $others, $hours, $minuite, $rating1, $rating2, $rating3, $rating4, $rating5, $rating6, $satisfied, $suggestion, $cname, $coffice, $ccno, $cemail, $mac, $stat, $year, $month, $day, $timezone, $hour, $encoded_by))) echo "true"; else echo "false";
+        $db = null;
 	}
 
 	public function login($uname,$pword){
