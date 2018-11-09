@@ -269,11 +269,12 @@
 			var url = "ajax?action=addCss";
 			$("#submit").attr("disabled",true);
 			$.get(url,function(data){
-			    console.log(data);
+			    var result = $.parseJSON(data);
 				if(data == "true"){
                     window.location="survey";
+                    console.log("saved");
                 } else {
-				    alert("Please contact to IT Section");
+				    alert(result[2]+" Please contact the IT Section");
                     Lobibox.notify('warning',{
                         msg:'Error submitting..'
                     });

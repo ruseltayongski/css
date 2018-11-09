@@ -12,9 +12,12 @@ class Database extends CI_Model{
 		      values('$cssstat','$section','$division','$rendered','$purpose1','$purpose2','$purpose3','$purpose4','$purpose5','$purpose6','$purpose7','$purpose8','$assistant1','$assistant2','$assistant3','$apply1','$apply2','$apply3','$apply4','$apply5','$others','$hours','$minuite','$rating1','$rating2','$rating3','$rating4','$rating5','$rating6','$satisfied','$suggestion','$cname','$coffice','$ccno','$cemail','$mac','$stat','$year','$month','$day','$timezone','$hour','$encoded_by',now())";
 
         $pdo = $db->prepare($sql);
+        if($pdo->execute(array($cssstat, $section, $division, $rendered, $purpose1, $purpose2, $purpose3, $purpose4, $purpose5, $purpose6, $purpose7, $purpose8, $assistant1, $assistant2, $assistant3, $apply1, $apply2, $apply3, $apply4, $apply5, $others, $hours, $minuite, $rating1, $rating2, $rating3, $rating4, $rating5, $rating6, $satisfied, $suggestion, $cname, $coffice, $ccno, $cemail, $mac, $stat, $year, $month, $day, $timezone, $hour, $encoded_by)))
+        	echo "true";
+        else
+        	echo json_encode($pdo->errorInfo());
 
-        if($pdo->execute(array($cssstat, $section, $division, $rendered, $purpose1, $purpose2, $purpose3, $purpose4, $purpose5, $purpose6, $purpose7, $purpose8, $assistant1, $assistant2, $assistant3, $apply1, $apply2, $apply3, $apply4, $apply5, $others, $hours, $minuite, $rating1, $rating2, $rating3, $rating4, $rating5, $rating6, $satisfied, $suggestion, $cname, $coffice, $ccno, $cemail, $mac, $stat, $year, $month, $day, $timezone, $hour, $encoded_by))) echo "true"; else echo "false";
-        $db = null;
+		$db = null;
 	}
 
 	public function login($uname,$pword){

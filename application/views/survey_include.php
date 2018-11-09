@@ -29,13 +29,13 @@
 			<input name = "cssstat" type = "radio" value="yes" onclick="stats();" required> Yes &nbsp;
 			<input name = "cssstat" type = "radio" value="no" onclick="stats();"> No
 		</div> 
-		<p id="stats" style="color:red;display:inlined;margin-left:250px;padding-bottom:20px;"></p>
+		<p id="stats" style="color:red;margin-left:250px;padding-bottom:20px;"></p>
 		</td>
 </tr>
 <tr>
     <td style = "text-align:center;padding-bottom:20px">
         <div style="position:absolute;margin-left:30px;">
-            Office Visited:<select id="field" name="section" style="border-radius:5px; width:200px;height:30px;font-size:fixed;" onchange="visit();" required>
+            Office Visited:<select id="field" name="section" style="border-radius:5px; width:200px;height:30px;" onchange="visit();" required>
                 <option value="" >Select Section</option>
                 <?php foreach($sectionAll as $row)
                 {
@@ -47,12 +47,12 @@
             </select>
         </div>
         <div style="position:absolute;margin-left:330px;">
-            <p id="visited" style="color:red;display:inlined;"></p>
+            <p id="visited" style="color:red;"></p>
         </div>
         <div style="position:absolute;margin-left:410px;">
             Staff who rendered service:<input id = "rendered" name = "rendered" type = "text" style = "border-radius:5px;color:black;" onkeyup="services();" required>
         </div>
-        <p id="service" style="color:red;display:inlined;margin-left:730px;padding-bottom:20px;"></p>
+        <p id="service" style="color:red;margin-left:730px;padding-bottom:20px;"></p>
     </td>
 </tr>
 <tr><td></td></tr>
@@ -92,7 +92,7 @@
 					<option value="10">November</option>
 					<option value="11">December</option> -->	
 					</select>
-			Day:<?php } ?><input id = "day" name = "day" type=<?php if(isset($_SESSION['user'])) echo "text"; else echo "hidden";?> size = "2" maxlength="2" style = "border-radius:5px;color:black;height:30px;" onkeypress='return event.charCode <= 57' onkeyup="dateChecked()" required>
+			Day:<?php } ?><input id = "day" name = "day" type='<?php if(isset($_SESSION['user'])) echo "text"; else echo "hidden";?>' size = "2" maxlength="2" style = "border-radius:5px;color:black;height:30px;" onkeypress='return event.charCode <= 57' onkeyup="dateChecked()" required>
 			<?php if(isset($_SESSION['user'])){ echo "<p id = 'dateErr' style = 'color:red;display:inline'></p>"; } else { echo "<input type='hidden' id = 'dateErr'>"; }?>
 				<br><br>(DATE ON CSS FORM)
 		</div>
