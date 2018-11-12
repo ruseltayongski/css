@@ -235,7 +235,7 @@ function selectrequired()
 	}
 }
 
-function selectfalse()
+function selectfalse(e)
 {
 	//////start trapping for radios
 		/*var true1 = false;
@@ -316,11 +316,9 @@ function selectfalse()
 	var p7=document.getElementById("purpose7");
 	var p8=document.getElementById("purpose8");
 	var x = document.getElementById("minuite").value;
-	if(x > 60 || x == '' || x == 0)
+	if(x > 60 || x == '' || x == 0 || e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57))
 	{	
 		document.getElementById("minuite").value='';
-		//document.getElementById("minuite").required=true;
-		//document.getElementById("err2").innerHTML = "Required";
 	}
 	else
 	{
@@ -476,7 +474,7 @@ function stats(){
 	document.getElementById('stats').innerHTML='';
 }
 
-function dateChecked()
+function dateChecked(e)
 {
 	var month=document.getElementById("month").value;
 	var day=document.getElementById("day").value;
@@ -496,7 +494,7 @@ function dateChecked()
 	}
 	var arrayDays= [head,feb,head,tail,tail,head,head,head,tail,head,tail,head];
 	mDay=arrayDays[cDay];
-	if(day > mDay || day <= 0){
+	if(day > mDay || day <= 0 || e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)){
 		document.getElementById("day").required=true;
 		document.getElementById("day").value="";
 		var dayErr=document.getElementById("dateErr").innerHTML="Invalid Month";

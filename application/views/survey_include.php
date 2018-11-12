@@ -92,7 +92,7 @@
 					<option value="10">November</option>
 					<option value="11">December</option> -->	
 					</select>
-			Day:<?php } ?><input id = "day" name = "day" type='<?php if(isset($_SESSION['user'])) echo "text"; else echo "hidden";?>' size = "2" maxlength="2" style = "border-radius:5px;color:black;height:30px;" onkeypress='return event.charCode <= 57' onkeyup="dateChecked()" required>
+			Day:<?php } ?><input id = "day" name = "day" type='<?php if(isset($_SESSION['user'])) echo "text"; else echo "hidden";?>' size = "2" maxlength="2" style = "border-radius:5px;color:black;height:30px;" onkeyup="dateChecked(event)" required>
 			<?php if(isset($_SESSION['user'])){ echo "<p id = 'dateErr' style = 'color:red;display:inline'></p>"; } else { echo "<input type='hidden' id = 'dateErr'>"; }?>
 				<br><br>(DATE ON CSS FORM)
 		</div>
@@ -162,7 +162,7 @@
 	<td style="padding-left:10px;padding-top:20px">
 		2. How long did you wait before you accomplish the purpose of your visit/transaction?
 		<input id = "hours" name = "hours" type = "text" size="1" maxlength="1" style = "text-align:center;border-radius:5px;color:black;" onkeypress='return event.charCode <= 57' onkeyup="hourstrapping();" >Hours(optional)								
-		<input id = "minuite" name = "minuite" type = "text" size = "2" maxlength="2" style ="text-align:center;border-radius:5px;color:black;" onkeypress='return event.charCode <= 57' onkeyup="selectfalse();"> Minutes
+		<input id = "minuite" name = "minuite" type = "text" size = "2" maxlength="2" style ="text-align:center;border-radius:5px;color:black;" onkeyup="selectfalse(event);"> Minutes
 		<p id = "err2" style = "color:red;display:inline;"></p>
   </td>
 </tr>
