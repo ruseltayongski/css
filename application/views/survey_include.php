@@ -162,7 +162,7 @@
 	<td style="padding-left:10px;padding-top:20px">
 		2. How long did you wait before you accomplish the purpose of your visit/transaction?
 		<input id = "hours" name = "hours" type = "text" size="1" maxlength="1" style = "text-align:center;border-radius:5px;color:black;" onkeypress='return event.charCode <= 57' onkeyup="hourstrapping();" >Hours(optional)								
-		<input id = "minuite" name = "minuite" type = "text" size = "2" maxlength="2" style ="text-align:center;border-radius:5px;color:black;" onkeyup="selectfalse(event);"> Minutes
+		<input id = "minuite" name = "minuite" type = "text" size = "2" maxlength="2" style ="text-align:center;border-radius:5px;color:black;" onkeyup="minuteValidate(event);"> Minutes
 		<p id = "err2" style = "color:red;display:inline;"></p>
   </td>
 </tr>

@@ -235,78 +235,22 @@ function selectrequired()
 	}
 }
 
+function minuteValidate(e){
+    var kEvent = e.which ;
+    if( !((kEvent > 64 && kEvent < 91) || (kEvent > 96 && kEvent < 123) || kEvent == 8 || kEvent == 32 || (kEvent >= 48 && kEvent <= 57)) )
+    {
+        document.getElementById("minuite").value='';
+    }
+    else
+    {
+        document.getElementById("err2").innerHTML = '';
+        document.getElementById("minuite").required=false;
+    }
+}
+
 function selectfalse(e)
 {
-	//////start trapping for radios
-		/*var true1 = false;
-		var true2 = false;
-		var true3 = false;
-		var true4 = false;
-		var true5 = false;
-		var true6 = false;
-		var true7 = false;
-		var radios1 = document.getElementsByName('rating1');
-		for (var i = 0, length = radios1.length; i < length; i++) {
-		    if (radios1[i].checked) {
-		    	alert("asda");
-		        true1 = true;
-		        break;
-		    }
-		}
-		var radios2 = document.getElementsByName('rating2');
-		for (var z = 0, length = radios2.length; z < length; z++) {
-		    if (radios2[z].checked) {
-		        true2 = true;
-		        break;
-		    }
-		}
-		var radios3 = document.getElementsByName('rating3');
-		for (var x = 0, length = radios3.length; x < length; x++) {
-		    if (radios3[x].checked) {
-		        true3 = true;
-		        break;
-		    }
-		}
-		var radios4 = document.getElementsByName('rating4');
-		for (var y = 0, length = radios4.length; y < length; y++) {
-		    if (radios4[y].checked) {
-		        true4 = true;
-		        break;
-		    }
-		}
-		var radios5 = document.getElementsByName('rating5');
-		for (var q = 0, length = radios5.length; q < length; q++) {
-		    if (radios5[q].checked) {
-		        true5 = true;
-		        break;
-		    }
-		}
-		var radios6 = document.getElementsByName('rating6');
-		for (var w = 0, length = radios6.length; w < length; w++) {
-		    if (radios6[w].checked) {
-		        true6 = true;
-		        break;
-		    }
-		}
-		var radios7 = document.getElementsByName('satisfied');
-		for (var f = 0, length = radios7.length; f < length; f++) {
-		    if (radios7[f].checked) {
-		    	alert("haha");
-		        true7 = true;
-		        break;
-		    }
-		}
-		if(true1 && true2 && true3 && true4 && true5 && true6 && true7){
-			alert("Ohyeeee!");
-			if(submit){
-				$("#generates").attr("disabled",true);
-			}
-			this.submit = true;
-		}
-		if(true7){
-			alert("haha");
-		}*/
-	/////end of trapping for radios	
+    /////end of trapping for radios
 	var p1=document.getElementById("purpose1");
 	var p2=document.getElementById("purpose2");
 	var p3=document.getElementById("purpose3");
@@ -315,16 +259,6 @@ function selectfalse(e)
 	var p6=document.getElementById("purpose6");
 	var p7=document.getElementById("purpose7");
 	var p8=document.getElementById("purpose8");
-	var x = document.getElementById("minuite").value;
-	if(x > 60 || x == '' || x == 0 || e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57))
-	{	
-		document.getElementById("minuite").value='';
-	}
-	else
-	{
-		document.getElementById("err2").innerHTML = '';
-		document.getElementById("minuite").required=false;
-	}
 
 	if(p4.checked)
 	{
@@ -479,7 +413,6 @@ function dateChecked(e)
 	var month=document.getElementById("month").value;
 	var day=document.getElementById("day").value;
 	var year=document.getElementById("year").value;
-	var mDay=0;
 	var cDay=0;
 	var feb=0;
 	var head=31;
@@ -493,14 +426,16 @@ function dateChecked(e)
 		}
 	}
 	var arrayDays= [head,feb,head,tail,tail,head,head,head,tail,head,tail,head];
-	mDay=arrayDays[cDay];
-	if(day > mDay || day <= 0 || e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)){
-		document.getElementById("day").required=true;
-		document.getElementById("day").value="";
-		var dayErr=document.getElementById("dateErr").innerHTML="Invalid Month";
+	var mDay=arrayDays[cDay];
+    var k = e.which ;
+	if( day <= mDay && ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57))){
+        document.getElementById("dateErr").innerHTML="";
 	}
-	else if(day != 0)
-		document.getElementById("dateErr").innerHTML="";
+	else {
+        document.getElementById("day").required=true;
+        document.getElementById("day").value="";
+        document.getElementById("dateErr").innerHTML="Invalid Month";
+    }
 }
 function hourstrapping(){
 	if($("#hours").val()==0){
