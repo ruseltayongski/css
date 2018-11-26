@@ -237,7 +237,7 @@ function selectrequired()
 
 function minuteValidate(e){
     var kEvent = e.which ;
-    if( !((kEvent > 64 && kEvent < 91) || (kEvent > 96 && kEvent < 123) || kEvent == 8 || kEvent == 32 || (kEvent >= 48 && kEvent <= 57)) )
+    if( !((kEvent > 64 && kEvent < 91) || (kEvent > 96 && kEvent < 123) || kEvent == 8 || kEvent == 32 || (kEvent >= 48 && kEvent <= 57)) || (day % 10 === 0))
     {
         document.getElementById("minuite").value='';
     }
@@ -429,7 +429,7 @@ function dateChecked(e)
 	var mDay=arrayDays[cDay];
     var k = e.which ;
 
-	if( day <= mDay && ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57)) || (day == 10 || day == 20 || day == 30)){
+	if( day <= mDay && ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57)) || (day % 10 === 0)){
         document.getElementById("dateErr").innerHTML="";
 	}
 	else {
