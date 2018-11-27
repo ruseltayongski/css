@@ -142,7 +142,7 @@ elseif($action=='addCss'){
 	$apply5 = $_SESSION['apply5'];
 	$others = $_SESSION['others'];
 	$hours = $_SESSION['hours'];
-	$minuite = $_SESSION['minuite'];
+	$minute = $_SESSION['minute'];
 	$rating1 = $_SESSION['rating1'];
 	$rating2 = $_SESSION['rating2'];
 	$rating3 = $_SESSION['rating3'];
@@ -163,6 +163,6 @@ elseif($action=='addCss'){
 	$timezone = $_SESSION['timezone'];
 	$hour = $_SESSION['hours'];
 	$encoded_by = $_SESSION['userid'];
-	$this->database->cssAdd($cssstat,$section,$division,$rendered,$purpose1,$purpose2,$purpose3,$purpose4,$purpose5,$purpose6,$purpose7,$purpose8,$assistant1,$assistant2,$assistant3,$apply1,$apply2,$apply3,$apply4,$apply5,$others,$hours,$minuite,$rating1,$rating2,$rating3,$rating4,$rating5,$rating6,$satisfied,$suggestion,$cname,$coffice,$ccno,$cemail,$mac,$stat,$year,$month,$day,$timezone,$hour,$encoded_by);
+	$this->database->cssAdd($cssstat,$section,$division,$rendered,$purpose1,$purpose2,$purpose3,$purpose4,$purpose5,$purpose6,$purpose7,$purpose8,$assistant1,$assistant2,$assistant3,$apply1,$apply2,$apply3,$apply4,$apply5,$others,$hours,$minute,$rating1,$rating2,$rating3,$rating4,$rating5,$rating6,$satisfied,$suggestion,$cname,$coffice,$ccno,$cemail,$mac,$stat,$year,$month,$day,$timezone,$hour,$encoded_by);
 	$_SESSION['ok']=true;
 }

@@ -132,7 +132,7 @@
 				<td>2.</td>
 				<td>How long did you wait before you accomplished the purpose of your visit/transaction?
 					<p style="margin-left:20px">Hours: <b><u></u><?=$_SESSION['hour']?></b>
-					<p style="margin-left:20px">Minuite: <b><u></u><?=$_SESSION['minuite']?></b>
+					<p style="margin-left:20px">Minute: <b><u></u><?=$_SESSION['minute']?></b>
 				</td>
 			</tr>
 			<tr><td></td></tr>

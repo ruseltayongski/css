@@ -44,9 +44,9 @@ $this->load->view('include/header');
 			$_SESSION['others']=$others;
 
             !empty($_POST['hours']) ? $hours=$_POST['hours'] : $hours=0;
-            !empty($_POST['minuite']) ? $minuite=$_POST['minuite'] : $minuite=0;
+            !empty($_POST['minute']) ? $minute=$_POST['minute'] : $minute=0;
 			$_SESSION['hours']=$hours;
-			$_SESSION['minuite']=$minuite;
+			$_SESSION['minute']=$minute;
 
 
             !empty($_POST['rating1']) ? $rating1=$_POST['rating1'] : $rating1=0;
@@ -235,19 +235,6 @@ function selectrequired()
 	}
 }
 
-function minuteValidate(e){
-    var kEvent = e.which ;
-    if( !((kEvent > 64 && kEvent < 91) || (kEvent > 96 && kEvent < 123) || kEvent == 8 || kEvent == 32 || (kEvent >= 48 && kEvent <= 57)) || (day % 10 === 0))
-    {
-        document.getElementById("minuite").value='';
-    }
-    else
-    {
-        document.getElementById("err2").innerHTML = '';
-        document.getElementById("minuite").required=false;
-    }
-}
-
 function selectfalse(e)
 {
     /////end of trapping for radios
@@ -429,15 +416,31 @@ function dateChecked(e)
 	var mDay=arrayDays[cDay];
     var k = e.which ;
 
-	if( day <= mDay && ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57)) || (day % 10 === 0)){
+	if( day <= mDay && day != 0 && ((k >= 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57)) ){
         document.getElementById("dateErr").innerHTML="";
 	}
 	else {
+        console.log(k);
         document.getElementById("day").required=true;
         document.getElementById("day").value="";
         document.getElementById("dateErr").innerHTML="Invalid Month";
     }
 }
+
+function minuteValidate(e,data){
+    var k = e.which ;
+    if( (k >= 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57) )
+    {
+        document.getElementById("err2").innerHTML = '';
+    }
+    else
+    {
+        console.log(k);
+        data.val("");
+        document.getElementById("err2").innerHTML = 'Invalid Minutes';
+    }
+}
+
 function hourstrapping(){
 	if($("#hours").val()==0){
 		$("#hours").val('');
