@@ -123,7 +123,7 @@ elseif($action=='addCss'){
     $cssstat = $_SESSION['oVisited'];
 	$section = $_SESSION['office'];
 	$division = $_SESSION['division'];
-	$rendered = $_SESSION['rendered'];
+	$rendered = addslashes($_SESSION['rendered']);
 	$purpose1 = $_SESSION['purpose1'];
 	$purpose2 = $_SESSION['purpose2'];
 	$purpose3 = $_SESSION['purpose3'];
@@ -140,7 +140,7 @@ elseif($action=='addCss'){
 	$apply3 = $_SESSION['apply3'];
 	$apply4 = $_SESSION['apply4'];
 	$apply5 = $_SESSION['apply5'];
-	$others = $_SESSION['others'];
+	$others = addslashes($_SESSION['others']);
 	$hours = $_SESSION['hours'];
 	$minute = $_SESSION['minute'];
 	$rating1 = $_SESSION['rating1'];
@@ -150,12 +150,12 @@ elseif($action=='addCss'){
 	$rating5 = $_SESSION['rating5'];
 	$rating6 = $_SESSION['rating6'];
 	$satisfied= $_SESSION['satisfied'];
-	$suggestion = $_SESSION['suggestion'];
-	$cname = $_SESSION['cname'];
-	$coffice = $_SESSION['coffice'];
-	$ccno = $_SESSION['ccno'];
-	$cemail = $_SESSION['cemail'];
-	$mac = $_SESSION['mac'];
+	$suggestion = addslashes($_SESSION['suggestion']);
+	$cname = addslashes($_SESSION['cname']);
+	$coffice = addslashes($_SESSION['coffice']);
+	$ccno = addslashes($_SESSION['ccno']);
+	$cemail = addslashes($_SESSION['cemail']);
+	$mac = addslashes($_SESSION['mac']);
 	$stat = 1;
 	$day = $_SESSION['day'];
 	$month = $_SESSION['month'];
@@ -164,5 +164,4 @@ elseif($action=='addCss'){
 	$hour = $_SESSION['hours'];
 	$encoded_by = $_SESSION['userid'];
 	$this->database->cssAdd($cssstat,$section,$division,$rendered,$purpose1,$purpose2,$purpose3,$purpose4,$purpose5,$purpose6,$purpose7,$purpose8,$assistant1,$assistant2,$assistant3,$apply1,$apply2,$apply3,$apply4,$apply5,$others,$hours,$minute,$rating1,$rating2,$rating3,$rating4,$rating5,$rating6,$satisfied,$suggestion,$cname,$coffice,$ccno,$cemail,$mac,$stat,$year,$month,$day,$timezone,$hour,$encoded_by);
-	$_SESSION['ok']=true;
 }

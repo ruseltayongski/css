@@ -1,8 +1,8 @@
 <?php
 class Database extends CI_Model{
     public function connect(){
-
-    	return new PDO("mysql:host=localhost;dbname=survey",'root','');
+    	$db = new PDO("mysql:host=localhost;dbname=survey;charset=utf8mb4",'root','');
+        return $db;
     }
 
 	public function cssAdd($cssstat,$section,$division,$rendered,$purpose1,$purpose2,$purpose3,$purpose4,$purpose5,$purpose6,$purpose7,$purpose8,$assistant1,$assistant2,$assistant3,$apply1,$apply2,$apply3,$apply4,$apply5,$others,$hours,$minuite,$rating1,$rating2,$rating3,$rating4,$rating5,$rating6,$satisfied,$suggestion,$cname,$coffice,$ccno,$cemail,$mac,$stat,$year,$month,$day,$timezone,$hour,$encoded_by){
@@ -12,10 +12,14 @@ class Database extends CI_Model{
 		      values('$cssstat','$section','$division','$rendered','$purpose1','$purpose2','$purpose3','$purpose4','$purpose5','$purpose6','$purpose7','$purpose8','$assistant1','$assistant2','$assistant3','$apply1','$apply2','$apply3','$apply4','$apply5','$others','$hours','$minuite','$rating1','$rating2','$rating3','$rating4','$rating5','$rating6','$satisfied','$suggestion','$cname','$coffice','$ccno','$cemail','$mac','$stat','$year','$month','$day','$timezone','$hour','$encoded_by',now())";
 
         $pdo = $db->prepare($sql);
-        if($pdo->execute(array($cssstat, $section, $division, $rendered, $purpose1, $purpose2, $purpose3, $purpose4, $purpose5, $purpose6, $purpose7, $purpose8, $assistant1, $assistant2, $assistant3, $apply1, $apply2, $apply3, $apply4, $apply5, $others, $hours, $minuite, $rating1, $rating2, $rating3, $rating4, $rating5, $rating6, $satisfied, $suggestion, $cname, $coffice, $ccno, $cemail, $mac, $stat, $year, $month, $day, $timezone, $hour, $encoded_by)))
+        if($pdo->execute(array($cssstat, $section, $division, $rendered, $purpose1, $purpose2, $purpose3, $purpose4, $purpose5, $purpose6, $purpose7, $purpose8, $assistant1, $assistant2, $assistant3, $apply1, $apply2, $apply3, $apply4, $apply5, $others, $hours, $minuite, $rating1, $rating2, $rating3, $rating4, $rating5, $rating6, $satisfied, $suggestion, $cname, $coffice, $ccno, $cemail, $mac, $stat, $year, $month, $day, $timezone, $hour, $encoded_by))) {
+            $_SESSION['ok']=true;
         	echo "true";
-        else
-        	echo json_encode($pdo->errorInfo());
+        }
+        else {
+            $_SESSION['notSaved']=true;
+            echo json_encode($pdo->errorInfo());
+        }
 
 		$db = null;
 	}

@@ -269,6 +269,7 @@
 			var url = "ajax?action=addCss";
 			$("#submit").attr("disabled",true);
 			$.get(url,function(data){
+			    console.log(data);
 			    var result = $.parseJSON(data);
 				if(data == "true"){
                     window.location="survey";

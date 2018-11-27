@@ -10,8 +10,8 @@ $this->load->view('include/header');
 			}
 			$_SESSION['office']=$section;
 			$_SESSION['division']=$division;
-			$rendered=$_POST['rendered'];
-			$_SESSION['rendered']=$rendered;
+			$rendered = $_POST['rendered'];
+			$_SESSION['rendered'] = $rendered;//str_replace("'","\'",$rendered);
 			!empty($_POST['purpose1']) ? $purpose1=$_POST['purpose1'] : $purpose1=0;
 			!empty($_POST['purpose2']) ? $purpose2=$_POST['purpose2'] : $purpose2=0;
 			!empty($_POST['purpose3']) ? $purpose3=$_POST['purpose3'] : $purpose3=0;
@@ -204,11 +204,20 @@ function display(){
 	}
 }
 display();
-<?php if(isset($_SESSION['ok'])): $_SESSION['ok']=null; ?>
-Lobibox.notify('success',{
-	msg:'Thank you for submitting..'
-});
-<?php endif; ?>
+<?php
+    if(isset($_SESSION['ok'])){
+        $_SESSION['ok']=null;
+?>
+        Lobibox.notify('success',{
+            msg:'Thank you for submitting..'
+        });
+<?php } elseif(isset($_SESSION['notSaved'])){
+        $_SESSION['notSaved']=null;
+?>
+        Lobibox.notify('warning',{
+            msg:'Error submitting..'
+        });
+<?php } ?>
 
 var submit = false;
 function selectrequired()
