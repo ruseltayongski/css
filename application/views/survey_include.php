@@ -62,14 +62,6 @@
 		<div style="margin-left:10px;">
 			<?php if(isset($_SESSION['user'])){ ?>
 			Year:<select id="year" name="year" style="color:black;width:70px;height:30px;font-size:15px;" required>
-					<!--
-					<option value="2015">2015</option>
-					<option value="2016">2016</option>
-					<option value="2017">2017</option>
-					<option value="2018">2018</option>
-					<option value="2019">2019</option>
-					<option value="2020">2020</option>
-					-->
 					<?php
 						for($i = date('Y'); $i >= 2014 ; $i--){
 							echo '<option value="'.$i.'">'.$i.'</option>';
@@ -77,7 +69,7 @@
 					?>
 		 		</select>
 			Month:<select id="month" name="month" onchange="clearMonth();" style="color:black;width:100px;height:30px;font-size:15px;" required>
-                    <option value="11">December</option>
+                    <option value="0">January</option>
                     <!--
 					<option value="0">January</option>
 					<option value="1">Febuary</option>
