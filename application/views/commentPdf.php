@@ -58,7 +58,7 @@ if($form){
 
 $display = 
 	'
-	<h1>January - September</h1>
+	<h1>'.$row['year'].'-'.$row['month'].'</h1>
 	<table cellspacing="1" cellpadding="5" border="1">
 			<tr>
 				<td style="background-color:lightgreen" align="center"><b>Section</b></td>

@@ -15,7 +15,7 @@ class Css extends CI_Controller {
         $this->load->view('members');
     }
 
-    public function comment_suggestion(){
+    public function comment_suggestion1(){
         if(isset($_SESSION['superuser'])){
             $this->load->view('include/header1');
             $year = $this->input->get('year');
@@ -23,6 +23,49 @@ class Css extends CI_Controller {
 
             $form = $this->database->cssComment($year,$month);
             $this->load->view('commentPdf',['form' => $form]);
+        }
+        else
+            redirect('css');
+    }
+
+    public function comment_suggestion(){
+        if(isset($_SESSION['superuser'])){
+            $year = $this->input->get('year');
+            $month = $this->input->get('month');
+            $form = $this->database->cssComment($year,$month);
+
+            header("Content-Type: application/xls");
+            header("Content-Disposition: attachment; filename=filename.xls");
+            header("Pragma: no-cache");
+            header("Expires: 0");
+
+            $tableRow = ' ';
+            if($form){
+                foreach($form as $row){
+                    $temp = "<tr>
+					<td>".$row['section']."</td>
+					<td>".$row['rendered']."</td>
+					<td>".$row['suggestion']."</td>
+					<td>".$row['month'].' '.$row['day'].', '.$row['year']."</td>
+				</tr>";
+                    $tableRow = $tableRow.$temp;
+                }
+            }
+
+            $display =
+                '
+                <h1>'.$row['year'].'-'.$row['month'].'</h1>
+                <table cellspacing="1" cellpadding="5" border="1">
+                <tr>
+                    <td style="background-color:lightgreen" align="center"><b>Section</b></td>
+                    <td style="background-color:lightgreen" align="center"><b>Staff who rendered</b></td>
+                    <td style="background-color:lightgreen" align="center"><b>Comment/Suggestion</b></td>
+                    <td style="background-color:lightgreen" align="center"><b>Date</b></td>
+                </tr>'
+                .$tableRow.
+                '</table>';
+
+            echo $display;
         }
         else
             redirect('css');
@@ -346,5 +389,6 @@ class Css extends CI_Controller {
         session_destroy();
         redirect('css');
     }
+
 }
 
