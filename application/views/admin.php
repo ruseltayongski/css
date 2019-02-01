@@ -1,8 +1,7 @@
 <?php $this->load->view('include/header1'); ?>
-<title>Admin</title>
-</head>
+<html>
+<div style="position:absolute;background-color: #2F4054;width: 100%;"><img style="margin-left: 20%" src="<?php echo base_url('images/banner_css.png');?>" ></div>
 	<body style="background:linear-gradient(360deg,green,lavender)">
-		<div class="container" style="position:absolute;"><img src="<?php echo base_url('images/css.png');?>"></div>
 		<div style="position:absolute;right:50px;top:30px;">
 			<div class="logout btn-group">
 	            <button style="height:34px;" type="button" class="btn btn-primary"><p class="glyphicon glyphicon-user">Welcome, <?php echo $_SESSION['prepname'];?></p></button>

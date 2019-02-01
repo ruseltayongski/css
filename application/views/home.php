@@ -1,5 +1,5 @@
 <html>
-  <title>Department Of Health</title>
+  <title>Department Of Health - CSS</title>
   <head>
     <link rel="shorcut icon" type="images/icon" href="<?php echo base_url('images/logo.png');?>">
     <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap.css');?>">
@@ -20,10 +20,10 @@
   }
   </style>
   <body style="background:linear-gradient(360deg,green,lavender)">
-    <div style="position:absolute;"><img src="<?php echo base_url('images/css.png');?>" ></div>
+    <div style="position:absolute;background-color: #2F4054;width: 100%;"><img style="margin-left: 20%" src="<?php echo base_url('images/banner_css.png');?>" ></div>
     <div class="container container-table">
       <div class="row vertical-center-row">
-        <div align="center">  
+        <div align="center">
           <table>
             <tr>
                <td align="center"><a href="<?php echo base_url('css/LoginPage');?>"><img src="<?php echo base_url('images/user.png');?>" class="img-circle img-responsive" width="70%" height="70%"></a></td>
@@ -37,8 +37,8 @@
                <td width="150"></td>
                <td align="center"><button type="button" class="btn btn-info" onclick="location.href='css/LoginPage';" style="color:black;width:110px;"><b>Admin</b></button></td>
              </tr>
-          </table> 
-        </div> 
+          </table>
+        </div>
       </div>
     </div>
   <footer class="container-fluid" style="background-color:black;" id="footer">

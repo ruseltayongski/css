@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="<?php echo base_url('loader.css');?>" />
 		<link rel="stylesheet" href="<?php echo base_url('style.css');?>" />
 		<link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap.css');?>" />
-		
+
 		<script src="<?php echo base_url('ckeditor_old/ckeditor/ckeditor.js');?>"></script>
 		<script src="<?php echo base_url('ckeditor_old/ckeditor/adapters/jquery.js');?>"></script>
 	    <script src="<?php echo base_url('js/jquery-1.11.3.min.js');?>"></script>
@@ -27,3 +27,4 @@
 			height:fixed;
 		}
 	</style>
+	
