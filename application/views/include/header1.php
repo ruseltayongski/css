@@ -24,7 +24,7 @@
 		#container{
 			margin:0 auto;
 			width: 615px;
-			height:fixed;
+
 		}
 	</style>
 	
