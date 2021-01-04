@@ -82,6 +82,7 @@ $pdf->writeHTML($tbl, true, false, false, false, '');
 
 //Close and output PDF document
 $pdf->Output('Fillup-css.pdf', 'i');
+exit;
 
 //============================================================+
 // END OF FILE
