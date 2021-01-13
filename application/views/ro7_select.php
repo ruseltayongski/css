@@ -42,6 +42,9 @@ if(isset($_POST['generate_report']))
                             <option value="2016">2016</option>
                             <option value="2017">2017</option>
                             <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
                         </select>
                         <button type="submit" class="btn btn-danger" style="margin-top:20px;margin-bottom:10px;" name="generate_report" onclick="monthRequired();"><i class="glyphicon glyphicon-file"></i> Generate Report</button>
                     </div>
