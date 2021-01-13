@@ -75,6 +75,11 @@
 			$doh="<h4 style='margin-bottom:40px;'><b>OFFICE/UNIT/SECTION: ".$_SESSION['section']."</b></h4>";
 		}	
 	}
+    if(isset($_SESSION['year'])){
+        $_SESSION['message']=$this->database->cssYear($_SESSION['year']);
+        $doh1="<h4><b>".$_SESSION['month']." ".$_SESSION['year']."</b></h4>";
+        $doh="<h4><b>DOH RO 7-".' YEAR'."</b></h4>";
+    }
 
 
 	foreach($_SESSION['message'] as $css)

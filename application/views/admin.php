@@ -85,7 +85,7 @@
 							<td width="20%"></td>
 							<td align="center"><button type="button" class="btn btn-info" style="color:black;width:100%;" onclick="location.href='staff_filter'"><b>Staff who rendered</b></button></td>
 							<td width="20%"></td>
-							<td align="center"><button type="button" class="btn btn-info" style="color:black;width:100%;" onclick="location.href='archievedregion'" disabled><b>Reserve Slot</b></button></td>
+							<td align="center"><button type="button" class="btn btn-info" style="color:black;width:100%;" onclick="location.href='reportyear'"><b>Consolidated Report By Year</b></button></td>
 							<td width="20%"></td>
 							<td align="center"><button type="button" class="btn btn-info" style="color:black;width:100%;" onclick="location.href='archievednegative'" disabled><b>Reserve Slot</b></button></td>
 						</tr>

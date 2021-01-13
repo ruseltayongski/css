@@ -357,6 +357,22 @@ class Database extends CI_Model{
 		}
 	}
 
+    public function cssYear($year){
+        try {
+            $db=$this->connect();
+            $sql="select * from css where year=?";
+            $pdo=$db->prepare($sql);
+            $pdo->execute(array($year));
+            $row=$pdo->fetchAll();
+            $db=null;
+
+            return $row;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
 	public function cssNegative($year,$month){
 		try {
 			$db=$this->connect();

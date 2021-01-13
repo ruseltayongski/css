@@ -295,6 +295,14 @@ class Css extends CI_Controller {
             redirect('css/LoginPage');
     }
 
+    public function reportyear(){
+        if(isset($_SESSION['superuser']) or isset($_SESSION['user'])){
+            $this->load->view('reportyear');
+        }
+        else
+            redirect('css/LoginPage');
+    }
+
     public function reportregional(){
         if(isset($_SESSION['superuser']) or isset($_SESSION['user'])){
             $this->load->view('reportregional');
