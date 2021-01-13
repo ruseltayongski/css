@@ -74,7 +74,7 @@
 							<td width="20%"></td>
 							<td align="center"><a href="staff_filter"><img src="<?php echo base_url('images/staff.png');?>" class="img-circle img-responsive" width="60%" height="70%"></a></td>
 							<td width="20%"></td>
-                            <td align="center"><a href="reportyear"><img src="<?php echo base_url('images/consolidate.png');?>" class="img-circle img-responsive" width="70%" height="70%"></a></td>
+                            <td align="center"><a href="reportyear"><img src="<?php echo base_url('images/consolidate.png');?>" class="img-circle img-responsive" width="60%" height="70%"></a></td>
 							<td width="20%"></td>
 							<td align="center"><img src="<?php echo base_url('images/folders.png');?>" class="img-circle img-responsive" width="70%" height="70%"></td>
 						</tr>

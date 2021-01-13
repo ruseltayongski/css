@@ -3,7 +3,7 @@
 $_SESSION['consolidated']=true;
 $_SESSION['archieved']=false;
 
-$_SESSION['year']=true;
+$_SESSION['yearly']=true;
 $_SESSION['regional']=null;
 $_SESSION['div']=null;
 $_SESSION['sec']=null;

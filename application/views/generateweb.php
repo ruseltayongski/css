@@ -75,7 +75,7 @@
 			$doh="<h4 style='margin-bottom:40px;'><b>OFFICE/UNIT/SECTION: ".$_SESSION['section']."</b></h4>";
 		}	
 	}
-    if(isset($_SESSION['year'])){
+    if(isset($_SESSION['yearly'])){
         $_SESSION['message']=$this->database->cssYear($_SESSION['year']);
         $doh1="<h4><b>".$_SESSION['month']." ".$_SESSION['year']."</b></h4>";
         $doh="<h4><b>DOH RO 7-".' YEAR'."</b></h4>";
@@ -765,8 +765,8 @@ in_array($Etotalr6palld, $decimal) ? $Etmp6d = number_format($Etotalr6palld,0) :
 						elseif(isset($_SESSION['sec'])){
 					?>
 						<button class="btn btn-primary" type="submit" name = "generate" style="display:inline;" s>Generate Section(PDF)</button>
-					<?php } elseif(isset($_SESSION['regional'])) { ?>
-						<button class="btn btn-danger" type="submit" name = "generate" style="display:inline;background:green;" >Generate Region(PDF)</button>
+					<?php } elseif(isset($_SESSION['regional']) or $_SESSION['yearly']) { ?>
+						<button class="btn btn-danger" type="submit" name = "generate" style="display:inline;background:green;" >Generate PDF</button>
 					<?php } ?>
 					</td>
 				</tr>
