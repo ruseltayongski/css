@@ -280,7 +280,7 @@ class Database extends CI_Model{
 	public function cssSection($section,$year,$month){
 		try{
 			$db=$this->connect();
-			$sql="select * from css where section=? and year=? and month=?";
+			$sql="select * from css where section=? and year='2021' and month='January'";
 			$pdo=$db->prepare($sql);
 			$pdo->execute(array($section,$year,$month));
 			$row=$pdo->fetchAll();
@@ -293,23 +293,23 @@ class Database extends CI_Model{
 		}
 	}
 
-	public function cssSectionDays($section,$year,$month,$day,$day1){
-		try {
-			$db=$this->connect();
-			$sql="select * from css where section=? and year='2020' and month='January' and day >= ? and day <= ?";
-			$pdo=$db->prepare($sql);
-			$pdo->execute(array($section,$year,$month,$day,$day1));
-			$row=$pdo->fetchAll();
-			$db=null;
+    public function cssSection1($section,$year,$month){
+        try{
+            $db=$this->connect();
+            $sql="select * from css where section=? and year=? and month=?";
+            $pdo=$db->prepare($sql);
+            $pdo->execute(array($section,$year,$month));
+            $row=$pdo->fetchAll();
+            $db=null;
 
-			return $row;
-		} 
-		catch (PDOException $e) {
-			return false;
-		}
-	}
+            return $row;
+        }
+        catch(PDOException $e){
+            return false;
+        }
+    }
 
-    public function cssSectionDays1($section,$year,$month,$day,$day1){
+    public function cssSectionDays($section,$year,$month,$day,$day1){
         try {
             $db=$this->connect();
             $sql="select * from css where section=? and year=? and month=? and day >= ? and day <= ?";
