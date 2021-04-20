@@ -280,7 +280,7 @@ class Database extends CI_Model{
 	public function cssSection($section,$year,$month){
 		try{
 			$db=$this->connect();
-			$sql="select * from css where section=? and year='2021' and (month='January' or month='Febuary' or month='March' or month='April' or month='May' or month='June' or month='July' or month='August' or month='September' or month='October' or month='November' or month='December') ";
+			$sql="select * from css where section=? and year='2020' and (month='January' or month='Febuary' or month='March' or month='April' or month='May' or month='June' or month='July' or month='August' or month='September' or month='October' or month='November' or month='December') ";
 			$pdo=$db->prepare($sql);
 			$pdo->execute(array($section));
 			$row=$pdo->fetchAll();
