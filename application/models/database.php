@@ -282,7 +282,7 @@ class Database extends CI_Model{
 			$db=$this->connect();
 			$sql="select * from css where section=? and year='2021' and month='January'";
 			$pdo=$db->prepare($sql);
-			$pdo->execute(array($section,$year,$month));
+			$pdo->execute(array($section));
 			$row=$pdo->fetchAll();
 			$db=null;
 
